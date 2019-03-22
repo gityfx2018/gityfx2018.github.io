@@ -1,10 +1,9 @@
-# **我的第一个markdown文档** #
+# **我的第一个markdown文档and the first blog** #
 > markdown usage:
 # **粗体ctrl + b** #
 ## *斜体ctrl + i* ##
-## 
 
-> ctrl + q 引号 ##
+> ctrl + q 引号
     代码块 ctrl + k
 ### 标题123 ###
 # 标题1 ctrl+1 #
