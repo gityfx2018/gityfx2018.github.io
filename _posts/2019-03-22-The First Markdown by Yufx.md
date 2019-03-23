@@ -14,13 +14,12 @@
 > 标题123
 
 
-# 标题1 ctrl+1 #
-	这是标题1
-## 标题2 ctrl+2 ##
-	这是标题2
-### 标题3 ctrl+3 ###
-	这是标题3
-
+# 标题1 #
+	ctrl+1
+## 标题2 ##
+	 ctrl+2
+### 标题3 ###
+	 ctrl+3
 
 	- 1	无序列表 ctrl + u
 	- 2
@@ -30,11 +29,10 @@
 	2. 
 	3. 
 
-	这是一个图片![](https://i.imgur.com/2VtDgcy.jpg)
-
+这是一个图片![](https://i.imgur.com/2VtDgcy.jpg)
 
 [我的Github主页](http://github.com/gityfx2018 "我的git主页")
 ----------
 2019/3/23 11:03:40
  
-[博客主页](http://gityfx2018.github.io "博客主页")
+[我的博客主页](http://gityfx2018.github.io "博客主页")
