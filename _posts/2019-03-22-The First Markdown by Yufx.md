@@ -31,8 +31,10 @@
 	3. 
 
 	这是一个图片![](https://i.imgur.com/2VtDgcy.jpg)
-	[http://github.com/gityfx2018](http://github.com/gityfx2018 "我的Github主页")
+
+
+[我的Github主页](http://github.com/gityfx2018 "我的git主页")
 ----------
-2019/3/23 11:03:40 
-	[[我的Github主页]（）
-	[http://gityfx2018.github.io](https://gityfx2018.github.io "")](http://gityfx2018.github.io "我的博客主页")
+2019/3/23 11:03:40
+ 
+[博客主页](http://gityfx2018.github.io "博客主页")
