@@ -16,27 +16,38 @@ tags:
 
 一. pyinstaller打包。`pyinstaller myexe.py`
 	> pyinstaller的菜单如下：
-	> 
-	> `-h, --help	显示此帮助消息并退出`
-	`-v, --version	显示程序版本信息并退出。`
-	`--distpath DIR	放置捆绑应用的位置（默认值：./ did）`
-	`--workpath WORKPATH	在哪里放置所有临时工作文件，.log，.pyz等（默认值：./ build）`
-	`-y, --noconfirm	替换输出目录（默认值：SPECPATH / dist / SPECNAME）而不要求确认`
-	`--upx-dir UPX_DIR	UPX实用程序的路径（默认：搜索执行路径）`
-	`-a, --ascii	不包括unicode编码支持（默认值：如果可用，则包含）`
-	`--clean	在构建之前清理PyInstaller缓存并删除临时文件。`
-	`--log-level LEVEL	构建时控制台消息中的详细信息量。LEVEL可能是DEBUG，INFO，WARN，ERROR，CRITICAL（默认值：INFO）之一。`
-	
-	> pyinstaller打包常用的：
-	> 
-	> `-D, --onedir	创建包含可执行文件的单文件夹包（默认）`
-	`-F, --onefile	创建一个文件捆绑的可执行文件。`
-	`--specpath DIR	用于存储生成的spec文件的文件夹（默认值：当前目录）`
-	`-n NAME, --name NAME	要分配给捆绑应用程序和规范文件的名称（默认值：第一个脚本的基本名称）`
-	> 比如我要打包一个无cmd窗口的，只有一个捆绑的exe的包:直接进入要打包的myexe的文件夹目录`ctrl+shift+右键单击`再执行`pyinstaller myexe.py -D -F`就等结束吧。
-	**打包后的可执行程序**存放在打包文件所再目录，会生成一个dist和bulid的文件夹，程序在dist里面。
-	
-	**值得注意的是**python的程序目录最好不要有中文路径，不然找问题容易忽略路径的问题。想要exe可移植还需要注意的就是目标电脑上要安装`vc_redist.x64.exe`这个插件。我是64位win10.
+
+`-h, --help	显示此帮助消息并退出`
+
+`-v, --version	显示程序版本信息并退出。`
+
+`--distpath DIR	放置捆绑应用的位置（默认值：./ did）`
+
+`--workpath WORKPATH	在哪里放置所有临时工作文件，.log，.pyz等（默认值：./ build）`
+
+`-y, --noconfirm	替换输出目录（默认值：SPECPATH / dist / SPECNAME）而不要求确认`
+
+`--upx-dir UPX_DIR	UPX实用程序的路径（默认：搜索执行路径）`
+
+`-a, --ascii	不包括unicode编码支持（默认值：如果可用，则包含）`
+
+`--clean	在构建之前清理PyInstaller缓存并删除临时文件。`
+
+`--log-level LEVEL	构建时控制台消息中的详细信息量。LEVEL可能是DEBUG，INFO，WARN，ERROR，CRITICAL（默认值：INFO）之一。`
+
+	pyinstaller打包常用的：
+	-D, --onedir	创建包含可执行文件的单文件夹包（默认）
+	-F, --onefile	创建一个文件捆绑的可执行文件。
+	--specpath DIR	用于存储生成的spec文件的文件夹（默认值：当前目录）
+	-n NAME, --name NAME	要分配给捆绑应用程序和规范文件的名称
+（默认值：第一个脚本的基本名称）
+	比如我要打包一个无cmd窗口的，只有一个捆绑的exe的包:
+直接进入要打包的myexe的文件夹目录`ctrl+shift+右键单击`
+再执行`pyinstaller myexe.py -D -F`就等结束吧。
+
+**打包后的可执行程序**存放在打包文件所再目录，会生成一个dist和bulid的文件夹，程序在dist里面。
+
+**值得注意的是**python的程序目录最好不要有中文路径，不然找问题容易忽略路径的问题。想要exe可移植还需要注意的就是目标电脑上要安装`vc_redist.x64.exe`这个插件。我是64位win10.
 
 
 > 二. 通过cx-freeze打包： 
@@ -50,12 +61,18 @@ tags:
         os.environ['TCL_LIBRARY']="C:\\python3\\Python36\\tcl\\tcl8.6"
         os.environ['TK_LIBRARY']="C:\\python3\\Python36\\tcl\\tk8.6"
         from cx_Freeze import setup, Executable
-        include_files = ["C:\\python3\\Python36\\DLLs\\tcl86t.dll", "C:\\python3\\Python36\\DLLs\\tk86t.dll",'C:\\Users\\yfx\\Desktop\\ccc\\1.mp3','C:\\Users\\yfx\\Desktop\\ccc\\1.png','C:\\Users\\yfx\\Desktop\\ccc\\love.py','C:\\Users\\yfx\\Desktop\\ccc\\simkai.ttf']
+        include_files = ["C:\\python3\\Python36\\DLLs\\tcl86t.dll",
+		"C:\\python3\\Python36\\DLLs\\tk86t.dll",
+		'C:\\Users\\yfx\\Desktop\\ccc\\1.mp3',
+		'C:\\Users\\yfx\\Desktop\\ccc\\1.png',
+		'C:\\Users\\yfx\\Desktop\\ccc\\love.py',
+		'C:\\Users\\yfx\\Desktop\\ccc\\simkai.ttf']
         # options = { 'build_exe': { 'excludes': ['gtk', 'PyQt5', 'Tkinter'], 'packages': [], 'includes': [], } }  
         base = None
         if sys.platform == "win32":
             base = "Win32gui"
-        options = { 'build_exe': { 'excludes': ['PyQt5','Tkinter'], 'packages': [], 'include_files': include_files, } }
+        options = { 'build_exe': { 'excludes': ['PyQt5','Tkinter'], 'packages': [],
+		 'include_files': include_files, } }
         executables = [Executable('C:\\Users\\yfx\\Desktop\\ccc\\love.py',base=base,targetName = 'love.exe')]#, icon = 'C:\\Users\\yfx\\Desktop\\aaa\\1.ico
         setup(name='yfx_1', version = '1.0', description ='', options=options, executables = executables)
 **其中第二行和第三行的环境必须导入**，其次，需要导入`pyqt4`或者`pyqt5`的库，include_filse里面是打包程序的项目文件等等。这里懒得写那么详细了，应该都看得懂了。
