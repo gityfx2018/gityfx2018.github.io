@@ -2,7 +2,7 @@
     @param {boolean} bottom - bottom will render <hr> 
 {% endcomment %}
 
-{% if site.featured-tags %}
+
 <section>
     <!--最新更新-->
     <h4 class="index-title"><i class="el-bulb"></i>最新资讯
@@ -28,6 +28,7 @@
             <iframe src="http://www.nicetool.net/embed/weather_forecast.html" width="100%" height="450px;" scrolling="no" style="border:0px;"></iframe>>
         </li>
     </ul>
+{% if site.featured-tags %}
     {% if include.bottom %}
         <hr class="hidden-sm hidden-xs">
     {% endif %}
